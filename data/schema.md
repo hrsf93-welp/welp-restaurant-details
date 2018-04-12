@@ -1,5 +1,3 @@
-
-
 <!-- Menu Items -->
 var menuItems = new Schema({
 	id: String,
