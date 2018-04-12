@@ -1,10 +1,10 @@
 # welp-restaurant-details
 
-> A functional Yelp restaurant page that shows detailed restaurant information, reviews and photos.
-> For this project, I built the right sidebar that contains 3 main components: 
-> 1) hours component that renders based off of the time the site is viewed
-> 2) menu component that is clickable with photos and reviews
-> 3) restaurant details component that displays more information about the restaurant
+A functional Yelp restaurant page that shows detailed restaurant information, reviews and photos.
+For this project, I built the right sidebar that contains 3 main components: 
+1. hours component that renders based off of the time the site is viewed
+2. menu component that is clickable with photos and reviews
+3. restaurant details component that displays more information about the restaurant
 
 ## Related Projects
 
