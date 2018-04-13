@@ -7,6 +7,7 @@ const menuItems = new Schema({
   name: String,
   description: String,
   category: String,
+  price: Number,
   reviewIds: [String],
   photoIds: [String],
 });
