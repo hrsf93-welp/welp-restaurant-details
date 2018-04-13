@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const restaurantInformation = new Schema({
-  _id: Number,
+  id: Number,
   hours: {
     monday: String,
     tuesday: String,
@@ -14,7 +14,7 @@ const restaurantInformation = new Schema({
     sunday: String,
   },
   attributes: {
-    restaurantsTableService: Boolean,
+    restaurantsPriceRange2: Number,
     goodForMeal: {
       dessert: Boolean,
       latenight: Boolean,
@@ -23,19 +23,6 @@ const restaurantInformation = new Schema({
       breakfast: Boolean,
       brunch: Boolean,
     },
-    alcohol: String,
-    caters: Boolean,
-    hasTV: Boolean,
-    restaurantsGoodForGroups: Boolean,
-    noiseLevel: String,
-    wiFi: String,
-    restaurantsAttire: String,
-    restaurantsReservations: Boolean,
-    outdoorSeating: Boolean,
-    businessAcceptsCreditCards: Boolean,
-    restaurantsPriceRange2: Number,
-    bikeParking: Boolean,
-    restaurantsDelivery: Boolean,
     ambience: {
       romantic: Boolean,
       intimate: Boolean,
@@ -47,8 +34,23 @@ const restaurantInformation = new Schema({
       upscale: Boolean,
       casual: Boolean,
     },
+    restaurantsTableService: Boolean,
+    restaurantsGoodForGroups: Boolean,
+    restaurantsReservations: Boolean,
+    restaurantsAttire: String,
+    restaurantsDelivery: Boolean,
     restaurantsTakeOut: Boolean,
+    caters: Boolean,
+    alcohol: String,
+    hasTV: Boolean,
+    wiFi: String,
+    noiseLevel: String,
     goodForKids: Boolean,
+    dogsAllowed: Boolean,
+    outdoorSeating: Boolean,
+    businessAcceptsCreditCards: Boolean,
+    wheelchairAccessible: Boolean,
+    bikeParking: Boolean,
     businessParking: {
       garage: Boolean,
       street: Boolean,

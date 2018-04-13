@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const menuItems = new Schema({
-  id: String,
-  businessId: Number,
+  id: Number,
   name: String,
   description: String,
   category: String,
