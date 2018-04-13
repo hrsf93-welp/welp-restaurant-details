@@ -12,6 +12,6 @@ const menuItems = new Schema({
   photoIds: [String],
 });
 
-const Menu = mongoose.model('Menu', menuItems);
+const MenuItem = mongoose.model('Menu', menuItems);
 
-module.exports = Menu;
+module.exports = MenuItem;

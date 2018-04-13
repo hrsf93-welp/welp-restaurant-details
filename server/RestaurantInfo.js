@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const restaurantDetails = new Schema({
+const restaurantInformation = new Schema({
   _id: Number,
   hours: {
     monday: String,
@@ -59,6 +59,6 @@ const restaurantDetails = new Schema({
   },
 });
 
-const Restaurants = mongoose.model('Restaurants', restaurantDetails);
+const RestaurantInfo = mongoose.model('Restaurant', restaurantInformation);
 
-module.exports = Restaurants;
+module.exports = RestaurantInfo;
