@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+mongoose.connect('mongodb://localhost/welp');
 
-const restaurantInformation = new Schema({
+const restaurantDetailsSchema = new mongoose.Schema({
   id: Number,
   hours: {
     monday: String,
@@ -61,6 +61,6 @@ const restaurantInformation = new Schema({
   },
 });
 
-const RestaurantInfo = mongoose.model('Restaurant', restaurantInformation);
+const Restaurants = mongoose.model('Restaurant', restaurantDetailsSchema);
 
-module.exports = RestaurantInfo;
+module.exports = Restaurants;

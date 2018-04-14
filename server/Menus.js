@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+mongoose.connect('mongodb://localhost/welp');
 
-const menuItems = new Schema({
+const menuItemsSchema = new mongoose.Schema({
   id: Number,
   name: String,
   description: String,
@@ -12,6 +12,6 @@ const menuItems = new Schema({
   photoIds: [String],
 });
 
-const MenuItem = mongoose.model('Menu', menuItems);
+const Menus = mongoose.model('Menu', menuItemsSchema);
 
-module.exports = MenuItem;
+module.exports = Menus;
