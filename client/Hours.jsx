@@ -5,14 +5,20 @@ class Hours extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      openNow: false,
+      isOpen: false,
     };
   }
 
   render() {
+    const openNow = this.state.isOpen ? (
+      <h4>Open Now</h4>
+    ) : (
+      <h4>Not Open</h4>
+    );
+
     return (
       <div>
-        <h4>Open Now: {this.state.openNow}</h4>
+        {openNow}
         <ul>
           { Object.keys(this.props.hours).map(day => (
             <li key={day}>{day}: {this.props.hours[day]}</li>))

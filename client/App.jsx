@@ -30,7 +30,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <div>{this.state.restaurantInfo.name}</div>
+        <h3>{this.state.restaurantInfo.name}</h3>
         {hours}
       </div>
     );
