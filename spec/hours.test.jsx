@@ -1,11 +1,10 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import Hours from '../client/Hours';
 
-describe('<Hours />'), () => {
+describe('<Hours />', () => {
   it('renders seven <li> components', () => {
     const wrapper = shallow(<Hours />);
-    expect(wrapper.find('li').to.have.length(7));
-  })
-};
-
+    expect(wrapper.find('li').length).toBe(7);
+  });
+});
