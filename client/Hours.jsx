@@ -2,30 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-// TODO: Print days in order
-// TODO: isBetween doesn't handle midnight correctly
-// TODO: lookup timezone using Google API and latitude/longitude
-
 const Hours = props => (
   <div>
     <table>
       <tbody>
-        { Object.keys(props.hours).map((day) => {
-          const formattedDay = day.charAt(0).toUpperCase() + day.slice(1);
-          const open = moment(props.hours[day].split('-')[0], 'HH:mm');
-          const close = moment(props.hours[day].split('-')[1], 'HH:mm');
-          let isOpen = '';
-          if (day === 'sunday') {
-            isOpen = moment('14:00', 'HH:mm').isBetween(open, close) ? 'Open Now' : 'Closed';
-          }
-          return (
-            <tr key={day}>
-              <td>{formattedDay}</td>
-              <td>{`${open.format('h:mm a')} -${close.format('h:mm a')}`}</td>
-              <td>{isOpen}</td>
-            </tr>
-          );
-        })}
+        { ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map((day) => {
+          // TODO: lookup restaurant timezone using Google API and latitude/longitude
+          const open = moment(`${props.hours[day].split('-')[0]} -0700'`, 'HH:mm Z').subtract(1, 'days');
+          const close = (props.hours[day].split('-')[1].split(':')[0] <= 12) ?
+          moment(`${props.hours[day].split('-')[1]} -0700'`, 'HH:mm Z') :
+              moment(`${props.hours[day].split('-')[1]} -0700'`, 'HH:mm Z').subtract(1, 'days');
+            const hoursOpen = (props.hours[day] === '0:00-0:00') ? '24/7' : `${open.format('h:mm a')} - ${close.format('h:mm a')}`;
+            let isOpen = '';
+            if (day === moment().format('dddd').toLowerCase()) {
+              isOpen = moment().isBetween(open, close) ? 'Open now' : 'Closed now';
+            }
+            return (
+              <tr key={day}>
+                <td>{day.charAt(0).toUpperCase() + day.slice(1)}</td>
+                <td>{hoursOpen}</td>
+                <td>{isOpen}</td>
+              </tr>
+            );
+          })
+        }
       </tbody>
     </table>
   </div>
@@ -35,11 +35,11 @@ Hours.propTypes = {
   hours: PropTypes.shape({
     monday: PropTypes.string,
     tuesday: PropTypes.string,
-    friday: PropTypes.string,
     wednesday: PropTypes.string,
     thursday: PropTypes.string,
-    sunday: PropTypes.string,
+    friday: PropTypes.string,
     saturday: PropTypes.string,
+    sunday: PropTypes.string,
   }).isRequired,
 };
 
