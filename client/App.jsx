@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       restaurantId: 40,
       restaurantInfo: '',
-      today: '',
+      today: {},
     };
   }
 
