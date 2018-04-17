@@ -16,17 +16,17 @@ $green: #41a700;
   background-color: $medium-background-color;
   border-color: $border-color;
 
+  dt {
+    display: inline;
+  }
+
   dd {
+    display: inline;
+    margin-left: 10px;
     font-weight: 700;
   }
 
-  .isOpen-true {
-    font-weight: 700;
-    color: $green;
-  }
-
-  .isOpen-false {
-    font-weight: 700;
-    color: $error-text;
+  span {
+    display: block;
   }
 }

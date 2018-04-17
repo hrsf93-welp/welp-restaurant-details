@@ -1,7 +1,13 @@
 /* Source: https://www.yelp.com/styleguide */
 
 .details {
+  dt {
+    display: inline;
+  }
+
   dd {
+    display: inline;
+    margin-left: 4px;
     font-weight: 700;
   }
 }

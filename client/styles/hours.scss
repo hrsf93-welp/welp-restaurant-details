@@ -6,6 +6,9 @@ $error-text: #d32323;
 $green: #41a700;
 
 .hours {
+    td {
+      padding: 2px 4px;
+    }
     .dayOfWeek {
       font-weight: 700;
     }
@@ -13,14 +16,16 @@ $green: #41a700;
     .hoursOpen {
       font-weight: 500;
     }
-    
-    .isOpen-true {
-      font-weight: 700;
-      color: $green;
-    }
+}
 
-    .isOpen-false {
-      font-weight: 700;
-      color: $error-text;
-    }
+.isOpen-true {
+  font-size: 12px;
+  font-weight: 700;
+  color: $green;
+}
+
+.isOpen-false {
+  font-size: 12px;
+  font-weight: 700;
+  color: $error-text;
 }
