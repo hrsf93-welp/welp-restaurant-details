@@ -23,8 +23,8 @@ Summary.propTypes = {
     dayOfWeek: PropTypes.string,
     hoursOpen: PropTypes.string,
     isOpen: PropTypes.string,
-  }).isRequired,
-  price: PropTypes.number.isRequired,
-};
+  }),
+  price: PropTypes.number,
+}.isRequired;
 
 export default Summary;
