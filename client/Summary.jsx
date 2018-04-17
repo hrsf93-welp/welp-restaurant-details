@@ -12,14 +12,16 @@ const Prices = {
 // TODO: Images
 const Summary = props => (
   <div className="summary">
-    <dl>
-      <dt>Today</dt>
-      <dd>{props.today.hoursOpen}
-        <span className={(props.today.isOpen === 'Open now') ? 'isOpen-true' : 'isOpen-false'}> {props.today.isOpen}</span>
-      </dd>
-    </dl>
-    <dl><dt>Full Menu</dt></dl>
-    <dl><dt>Price Range</dt><dd>{Prices[props.price]}</dd></dl>
+    <div className="today">
+      <dl>
+        <dt>Today</dt>
+        <dd>{props.today.hoursOpen}
+          <div className={(props.today.isOpen === 'Open now') ? 'isOpen-true' : 'isOpen-false'}> {props.today.isOpen}</div>
+        </dd>
+      </dl>
+    </div>
+    <div className="full-menu"><dl><dt>Full Menu</dt></dl></div>
+    <div className="price"><dl><dt>Price Range</dt><dd>{Prices[props.price]}</dd></dl></div>
   </div>
 );
 
