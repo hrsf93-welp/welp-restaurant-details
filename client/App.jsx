@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Hours from './Hours';
+import Details from './Details';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,10 +29,19 @@ class App extends React.Component {
       <div>Hours not available</div>
     );
 
+    const details = this.state.restaurantInfo.attributes ? (
+      <Details attributes={this.state.restaurantInfo.attributes} />
+    ) : (
+      <div>More Business Info not available</div>
+    );
+
     return (
       <div>
-        <h3>{this.state.restaurantInfo.name}</h3>
+        <h2>{this.state.restaurantInfo.name}</h2>
+        <h3>Hours</h3>
         {hours}
+        <h3>More Business Info</h3>
+        {details}
       </div>
     );
   }
