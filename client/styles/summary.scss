@@ -20,7 +20,10 @@ $green: #41a700;
   border: 1px solid $border-color;
 
   .today {
-    height: 32px;
+    height: 36px;
+    div {
+      margin-top: 4px;
+    }
   }
 
   .full-menu {
