@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Hours from '../client/Hours';
+import { Hours }  from '../client/Hours';
 import EXAMPLE_RESTAURANT from '../data/exampleSingleEntryRestaurantInfo';
 
 describe('<Hours />', () => {
