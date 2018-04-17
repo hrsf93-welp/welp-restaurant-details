@@ -4,6 +4,6 @@
     "jest": true
   },
   "rules": {
-    "max-len": [1, 130]
+    "max-len": [1, 150]
   }
 }

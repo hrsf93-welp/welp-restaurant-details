@@ -1,0 +1,47 @@
+@import 'summary';
+@import 'hours';
+@import 'details';
+
+/* Source: https://www.yelp.com/styleguide */
+
+// Primary colors
+$yelpy-red: #d32323;
+$blue: #0073bb;
+$black: #333333;
+
+// Text
+$font-family: sans-serif;
+$font-size: 14px;
+$normal-text: #333333;
+$mid-text: #666666;
+$subtle-text: #999999;
+$ghost-text: #999999;
+$error-text: #d32323;
+$elite-text: #f15c00;
+$warning-text: #333333;
+$link-color: #0073bb;
+$green: #41a700;
+
+/* Global styles */
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $normal-text;
+  h1{
+    color: $black;
+    font-size: 30px;
+  }
+  h2 {
+    color: $yelpy-red;
+    font-size:  21px;
+  }
+  h3 {
+    color: $yelpy-red;
+    font-size:  16px;
+  }
+  h4 {
+    color: $black;
+    font-size: 	14px;
+  }
+}

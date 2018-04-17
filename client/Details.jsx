@@ -97,7 +97,7 @@ const Details = (props) => {
       </dl>;
 
   return (
-    <div>
+    <div className="details">
       {GoodForMeal}
       {Alcohol}
       {Caters}

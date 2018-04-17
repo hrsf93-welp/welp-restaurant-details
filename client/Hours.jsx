@@ -9,7 +9,7 @@ const Today = {
 };
 
 const Hours = props => (
-  <div>
+  <div className="hours">
     <table>
       <tbody>
         { ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map((dayOfWeek) => {
@@ -28,9 +28,9 @@ const Hours = props => (
           }
           return (
             <tr key={dayOfWeek}>
-              <td>{dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1)}</td>
-              <td>{hoursOpen}</td>
-              <td>{isOpen}</td>
+              <td className="dayOfWeek">{dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1)}</td>
+              <td className="hoursOpen">{hoursOpen}</td>
+              <td className={(isOpen === 'Open now') ? 'isOpen-true' : 'isOpen-false'}>{isOpen}</td>
             </tr>
           );
           })

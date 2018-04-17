@@ -11,8 +11,11 @@ const Prices = {
 // TODO: Link to Menu
 // TODO: Images
 const Summary = props => (
-  <dl>
-    <dt>Today</dt><dd>{props.today.hoursOpen} {props.today.isOpen}</dd>
+  <dl className="summary">
+    <dt>Today</dt>
+    <dd>{props.today.hoursOpen}
+      <span className={(props.today.isOpen === 'Open now') ? 'isOpen-true' : 'isOpen-false'}> {props.today.isOpen}</span>
+    </dd>
     <dt>Full Menu</dt>
     <dt>Price Range</dt><dd>{Prices[props.price]}</dd>
   </dl>

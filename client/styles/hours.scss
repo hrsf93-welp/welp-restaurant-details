@@ -1,0 +1,26 @@
+/* Source: https://www.yelp.com/styleguide */
+
+// Colors
+$normal-text: #333333;
+$error-text: #d32323;
+$green: #41a700;
+
+.hours {
+    .dayOfWeek {
+      font-weight: 700;
+    }
+
+    .hoursOpen {
+      font-weight: 500;
+    }
+    
+    .isOpen-true {
+      font-weight: 700;
+      color: $green;
+    }
+
+    .isOpen-false {
+      font-weight: 700;
+      color: $error-text;
+    }
+}
