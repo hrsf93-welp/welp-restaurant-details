@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import Summary from './Summary';
 import { Today, Hours } from './Hours';
 import Details from './Details';
@@ -47,5 +48,13 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  }).isRequired,
+};
 
 export default App;
