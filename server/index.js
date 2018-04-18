@@ -5,10 +5,9 @@ const Restaurants = require('./Restaurants');
 const app = express();
 
 app.set('port', 3002);
+app.listen(app.get('port'));
 
 app.use(express.static(path.join(__dirname, '/../public')));
-
-app.listen(app.get('port'), console.log(`Listening on ${app.get('port')}`));
 
 app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname, '/../public/index.html'));
