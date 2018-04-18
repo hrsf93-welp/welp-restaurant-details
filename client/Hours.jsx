@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-const Today = {
-  dayOfWeek: '',
+const HoursToday = {
   hoursOpen: '',
   isOpen: '',
 };
 
+// TODO: lookup restaurant timezone using Google API and latitude/longitude
 const Hours = props => (
   <div className="hours">
+    <h3>Hours</h3>
     <table>
       <tbody>
         { ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map((dayOfWeek) => {
-          // TODO: lookup restaurant timezone using Google API and latitude/longitude
           const open = moment(`${props.hours[dayOfWeek].split('-')[0]} -0700'`, 'HH:mm Z');
           const close = (props.hours[dayOfWeek].split('-')[1].split(':')[0] <= 12) ?
             moment(`${props.hours[dayOfWeek].split('-')[1]} -0700'`, 'HH:mm Z').add(1, 'days') :
@@ -24,9 +24,8 @@ const Hours = props => (
             // console.log(open);
             // console.log(close);
             isOpen = moment().isBetween(open, close) ? 'Open now' : 'Closed now';
-            Today.dayOfWeek = dayOfWeek;
-            Today.hoursOpen = hoursOpen;
-            Today.isOpen = isOpen;
+            HoursToday.hoursOpen = hoursOpen;
+            HoursToday.isOpen = isOpen;
           }
           return (
             <tr key={dayOfWeek}>
@@ -54,4 +53,4 @@ Hours.propTypes = {
   }).isRequired,
 };
 
-export { Today, Hours };
+export { Hours, HoursToday };

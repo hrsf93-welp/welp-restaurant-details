@@ -1,11 +1,18 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Hours } from '../client/Hours';
 import EXAMPLE_RESTAURANT from './data/exampleSingleEntryRestaurantInfo';
 
 describe('<Hours />', () => {
-  it('renders a row for each day of the week', () => {
+  test('renders Hours title', () => {
+    const wrapper = shallow(<Hours hours={EXAMPLE_RESTAURANT.hours} />);
+    expect(wrapper.find('h3').first().text()).toEqual('Hours');
+  });
+  test('renders a row for each day of the week', () => {
     const wrapper = mount(<Hours hours={EXAMPLE_RESTAURANT.hours} />);
     expect(wrapper.find('tr').length).toBe(7);
   });
+  // test('renders closed if closed on any day of the week');
+  // test('renders open/closed now beside the correct day of the week');
+  // test('correctly handles time day of the week');
 });

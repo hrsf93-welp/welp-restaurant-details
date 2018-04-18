@@ -8,10 +8,9 @@ const Prices = {
   4: 'above $61',
 };
 
-// TODO: Link to Menu
-// TODO: Images
-const Summary = props => (
-  <div className="summary">
+// TODO: Icons
+const Summary = (props) => {
+  const today = (props.today.hoursOpen !== '') &&
     <div className="today">
       <dl>
         <dt>Today</dt>
@@ -19,11 +18,22 @@ const Summary = props => (
           <div className={(props.today.isOpen === 'Open now') ? 'isOpen-true' : 'isOpen-false'}> {props.today.isOpen}</div>
         </dd>
       </dl>
+    </div>;
+
+  const menu = (typeof props.menu !== 'undefined') &&
+    <div className="menu"><dl><dt>{props.menu}</dt></dl></div>;
+
+  const price = (typeof props.price !== 'undefined') &&
+    <div className="price"><dl><dt>Price Range</dt><dd>{Prices[props.price]}</dd></dl></div>;
+
+  return (
+    <div className="summary">
+      {today}
+      {menu}
+      {price}
     </div>
-    <div className="full-menu"><dl><dt>Full Menu</dt></dl></div>
-    <div className="price"><dl><dt>Price Range</dt><dd>{Prices[props.price]}</dd></dl></div>
-  </div>
-);
+  );
+};
 
 Summary.propTypes = {
   today: PropTypes.shape({

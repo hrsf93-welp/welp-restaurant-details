@@ -98,6 +98,7 @@ const Details = (props) => {
 
   return (
     <div className="details">
+      <h3>More Business Info</h3>
       {GoodForMeal}
       {Alcohol}
       {Caters}
