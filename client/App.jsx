@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurantId: 40,
+      restaurantId: props.match.params.id,
       restaurantInfo: '',
       today: {},
     };
@@ -27,7 +27,7 @@ class App extends React.Component {
       <Summary today={this.state.today} price={this.state.restaurantInfo.attributes.restaurantsPriceRange2} /> :
       <div>Summary not available</div>;
 
-    const hours = this.state.restaurantInfo ?
+    const hours = this.state.restaurantInfo.hours ?
       <Hours hours={this.state.restaurantInfo.hours} /> :
       <div>Hours not available</div>;
 
