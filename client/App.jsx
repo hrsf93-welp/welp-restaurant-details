@@ -1,9 +1,14 @@
 import React from 'react';
-import axios from 'axios';
 import PropTypes from 'prop-types';
+import Raven from 'raven-js';
+import axios from 'axios';
 import Summary from './Summary';
 import { Today, Hours } from './Hours';
 import Details from './Details';
+
+Raven
+  .config('https://7f6edf48db67490fa3b5f0e72e26c6e9@sentry.io/1191135')
+  .install();
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +25,9 @@ class App extends React.Component {
       .then((response) => {
         this.setState({ restaurantInfo: response.data[0] });
         this.setState({ today: Today });
+      })
+      .catch((error) => {
+        Raven.captureException(error);
       });
   }
 
