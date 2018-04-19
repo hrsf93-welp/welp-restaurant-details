@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 
 const HoursToday = {
-  today: '',
+  dayOfWeek: '',
   hoursOpen: '',
   isOpen: '',
 };
@@ -23,7 +23,7 @@ const Hours = props => (
           if (dayOfWeek === moment().format('dddd').toLowerCase()) {
             // console.log(open);
             // console.log(close);
-            HoursToday.today = dayOfWeek;
+            HoursToday.dayOfWeek = dayOfWeek;
             HoursToday.hoursOpen = hoursOpen;
             HoursToday.isOpen = moment().isBetween(open, close);
           }
@@ -31,7 +31,7 @@ const Hours = props => (
             <tr key={dayOfWeek}>
               <td className="dayOfWeek">{dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1, 3)}</td>
               <td className="hoursOpen">{hoursOpen}</td>
-              { dayOfWeek === HoursToday.today && (
+              { dayOfWeek === HoursToday.dayOfWeek && (
                 HoursToday.isOpen ?
                   <td className="isOpenTrue">Open now</td> :
                   <td className="isOpenFalse">Closed now</td>

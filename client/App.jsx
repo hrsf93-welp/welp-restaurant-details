@@ -6,6 +6,7 @@ import Summary from './Summary';
 import { Hours, HoursToday } from './Hours';
 import Menu from './Menu';
 import Details from './Details';
+import EXAMPLE_MENU_ITEMS from '../spec/data/exampleMenuItems';
 
 Raven
   .config('https://7f6edf48db67490fa3b5f0e72e26c6e9@sentry.io/1191135')
@@ -18,7 +19,7 @@ class App extends React.Component {
       restaurantId: props.match.params.id,
       restaurantInfo: '',
       restaurantHoursToday: '',
-      restaurantMenu: '',
+      restaurantMenu: EXAMPLE_MENU_ITEMS,
     };
   }
 
