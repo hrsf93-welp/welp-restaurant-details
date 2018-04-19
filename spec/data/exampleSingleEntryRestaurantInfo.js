@@ -49,7 +49,7 @@ const EXAMPLE_RESTAURANT = {
     restaurantsTakeOut: true,
     goodForKids: true,
     businessParking: {
-      garage: false,
+      garage: true,
       street: false,
       validated: false,
       lot: false,

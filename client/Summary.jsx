@@ -15,7 +15,10 @@ const Summary = (props) => {
       <dl>
         <dt>Today</dt>
         <dd>{props.today.hoursOpen}
-          <div className={(props.today.isOpen === 'Open now') ? 'isOpen-true' : 'isOpen-false'}> {props.today.isOpen}</div>
+          { props.today.isOpen ?
+            <div className="isOpenTrue">Open now</div> :
+            <div className="isOpenFalse">Closed now</div>
+          }
         </dd>
       </dl>
     </div>;

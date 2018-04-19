@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 
 const HoursToday = {
+  today: '',
   hoursOpen: '',
   isOpen: '',
 };
@@ -19,19 +20,22 @@ const Hours = props => (
             moment(`${props.hours[dayOfWeek].split('-')[1]} -0700'`, 'HH:mm Z').add(1, 'days') :
             moment(`${props.hours[dayOfWeek].split('-')[1]} -0700'`, 'HH:mm Z');
           const hoursOpen = (props.hours[dayOfWeek] === '0:00-0:00') ? '24/7' : `${open.format('h:mm a')} - ${close.format('h:mm a')}`;
-          let isOpen = '';
           if (dayOfWeek === moment().format('dddd').toLowerCase()) {
             // console.log(open);
             // console.log(close);
-            isOpen = moment().isBetween(open, close) ? 'Open now' : 'Closed now';
+            HoursToday.today = dayOfWeek;
             HoursToday.hoursOpen = hoursOpen;
-            HoursToday.isOpen = isOpen;
+            HoursToday.isOpen = moment().isBetween(open, close);
           }
           return (
             <tr key={dayOfWeek}>
               <td className="dayOfWeek">{dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1, 3)}</td>
               <td className="hoursOpen">{hoursOpen}</td>
-              <td className={(isOpen === 'Open now') ? 'isOpen-true' : 'isOpen-false'}>{isOpen}</td>
+              { dayOfWeek === HoursToday.today && (
+                HoursToday.isOpen ?
+                  <td className="isOpenTrue">Open now</td> :
+                  <td className="isOpenFalse">Closed now</td>
+              )}
             </tr>
           );
           })
