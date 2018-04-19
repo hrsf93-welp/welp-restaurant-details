@@ -70,6 +70,7 @@ const EXAMPLE_RESTAURANT = {
     sunday: '11:00-23:00',
     saturday: '11:00-0:00',
   },
+  menuUrl: 'http://www.sushiloca.com/centennial-center',
 };
 
 export default EXAMPLE_RESTAURANT;

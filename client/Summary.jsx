@@ -24,7 +24,7 @@ const Summary = (props) => {
     </div>;
 
   const menu = (typeof props.menu !== 'undefined') &&
-    <div className="menu"><dl><dt>{props.menu}</dt></dl></div>;
+    <div className="menu"><dl><dt><a href={props.menu}>Full Menu</a></dt></dl></div>;
 
   const price = (typeof props.price !== 'undefined') &&
     <div className="price"><dl><dt>Price Range</dt><dd>{Prices[props.price]}</dd></dl></div>;
