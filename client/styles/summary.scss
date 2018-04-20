@@ -11,6 +11,7 @@ $ad-border-color: #ebc074;
 $normal-text: #333333;
 $error-text: #d32323;
 $green: #41a700;
+$link-color: #0073bb;
 
 .summary {
   display: inline-block;
@@ -58,6 +59,7 @@ $green: #41a700;
 
   a {
     font-weight: 700;
+    color: $link-color;
     &:link { text-decoration: none; }
     &:visited { text-decoration: none; }
     &:hover { text-decoration: underline; }

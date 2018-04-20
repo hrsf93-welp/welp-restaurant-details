@@ -4,7 +4,7 @@ import Raven from 'raven-js';
 import axios from 'axios';
 import Summary from './Summary';
 import { Hours, HoursToday } from './Hours';
-import Menu from './Menu';
+import MenuPreview from './MenuPreview';
 import Details from './Details';
 import EXAMPLE_MENU_ITEMS from '../spec/data/exampleMenuItems';
 
@@ -53,7 +53,7 @@ class App extends React.Component {
       <Hours hours={this.state.restaurantInfo.hours} />;
 
     const menu = this.state.restaurantMenu &&
-      <Menu menu={this.state.restaurantMenu} />;
+      <MenuPreview menu={this.state.restaurantMenu} />;
 
     const details = this.state.restaurantInfo.attributes &&
       <Details attributes={this.state.restaurantInfo.attributes} />;

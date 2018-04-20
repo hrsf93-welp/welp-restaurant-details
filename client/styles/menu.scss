@@ -2,10 +2,18 @@
 
 // Text colors
 $normal-text: #333333;
+$link-color: #0073bb;
 
 .menu {
   dl {
     font-weight: 700;
+    color: $link-color;
+    &:hover { text-decoration: underline; }
   }
 
+  .fullMenu {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
 }
