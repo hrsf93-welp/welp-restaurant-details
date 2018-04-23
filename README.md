@@ -15,7 +15,7 @@ For this project, I built the right sidebar that contains 3 main components:
 ## Table of Contents
 
 1. [Requirements](#Requirements)
-2. [Installing Dependencies](#Installing Dependencies)
+2. [Installing Dependencies](#InstallingDependencies)
 3. [Development](#Development)
 4. [Usage](#Usage)
 
