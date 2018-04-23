@@ -9,34 +9,37 @@ For this project, I built the right sidebar that contains 3 main components:
 ## Related Projects
 
   - https://github.com/hrsf93-welp/welp-restaurant-summary
-  - https://github.com/hrsf93-welp/welp-restaurant-mapbox
   - https://github.com/hrsf93-welp/welp-photo-gallery
   - https://github.com/hrsf93-welp/welp-review
 
 ## Table of Contents
 
-1. [Usage](#Usage)
-2. [Requirements](#requirements)
-3. [Development](#development)
-
-## Usage
-
-> Some usage instructions
+1. [Requirements](#Requirements)
+2. [Installing Dependencies](#Installing Dependencies)
+3. [Development](#Development)
+4. [Usage](#Usage)
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
+* __Note:__ Nodemon should be installed globally.
+```sh
+npm install -g nodemon
+```
 ### Installing Dependencies
 
 From within the root directory:
 
 ```sh
-yarn install
+npm install
 ```
 
+## Development
+
+```sh
+npm run build
+npm start
+```
+
+## Usage
+
+In a browser navigate to localhost:3002
