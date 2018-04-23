@@ -21,9 +21,11 @@ For this project, I built the right sidebar that contains 3 main components:
 
 ## Requirements
 
-* __Note:__ Nodemon should be installed globally.
+* __Note:__ Nodemon, Webpack and Mongo can be installed globally:
 ```sh
 npm install -g nodemon
+npm install -g webpack
+npm install -g mongo
 ```
 ### Installing Dependencies
 
@@ -31,15 +33,24 @@ From within the root directory:
 
 ```sh
 npm install
+npm run build
 ```
 
 ## Development
 
+To run locally you'll need to import the database using these commands:
+
 ```sh
-npm run build
-npm start
+mongod
+mongo
+mongoimport --db welp --collection restaurants --file ./spec/data/exampleDataRestaurantInfo.json
+
 ```
 
 ## Usage
 
+From within the root directory:
+```sh
+npm start
+```
 In a browser navigate to localhost:3002
