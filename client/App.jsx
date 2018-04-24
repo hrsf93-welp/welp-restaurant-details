@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import React from 'react';
 import Raven from 'raven-js';
 import axios from 'axios';
@@ -24,7 +25,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/details/${this.state.restaurantId}`)
+    axios.get(`http://127.0.0.1:3002/api/details/${this.state.restaurantId}`)
       .then((response) => {
         this.setState({ restaurantInfo: response.data });
         this.setState({ restaurantHoursToday: HoursToday });
