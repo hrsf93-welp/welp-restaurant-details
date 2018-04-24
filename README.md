@@ -1,6 +1,7 @@
 # welp-restaurant-details
 
 A service provided to a parent Yelp restaurant page.
+
 Contains 4 major sub-components: 
 1. Summary component
 2. Hours component that renders based off of the time the site is viewed
@@ -23,13 +24,13 @@ Contains 4 major sub-components:
 
 ## Requirements
 
-* __Note:__ Nodemon, Webpack and Mongo can be installed globally:
+__Note:__ Nodemon, Webpack and Mongo can be installed globally:
 ```sh
 npm install -g nodemon
 npm install -g webpack
 npm install -g mongo
 ```
-### Installing Dependencies
+## Installing Dependencies
 
 From within the root directory:
 
