@@ -22,8 +22,8 @@ app.get('/api/details/:id', (req, res) => {
   });
 });
 
-// app.get('/api/menu/:id', (req, res) => {
-//   Menus.findOne({ id: req.params.id }, (err, result) => {
-//     res.send(result);
-//   });
-// });
+app.get('/api/menu/:id', (req, res) => {
+  Menus.findOne({ id: req.params.id }, (err, result) => {
+    res.send(result);
+  });
+});
