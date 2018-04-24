@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Raven from 'raven-js';
 import axios from 'axios';
+import queryString from 'query-string';
 import Summary from './Summary';
 import { Hours, HoursToday } from './Hours';
 import MenuPreview from './MenuPreview';
@@ -16,7 +16,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurantId: props.match.params.id,
+      restaurantId: queryString.parse(window.location.search).id,
       restaurantInfo: '',
       restaurantHoursToday: '',
       restaurantMenu: EXAMPLE_MENU_ITEMS,
@@ -69,13 +69,5 @@ class App extends React.Component {
     );
   }
 }
-
-App.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
-  }).isRequired,
-};
 
 export default App;
