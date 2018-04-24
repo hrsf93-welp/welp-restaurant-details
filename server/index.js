@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const Restaurants = require('../database/Restaurants');
 const Menus = require('../database/Menus');
 
@@ -9,6 +10,7 @@ app.set('port', 3002);
 app.listen(app.get('port'));
 
 app.use(express.static(path.join(__dirname, '/../public')));
+app.use(cors());
 
 app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname, '/../public/index.html'));
