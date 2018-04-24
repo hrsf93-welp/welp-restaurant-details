@@ -33,7 +33,7 @@ class App extends React.Component {
       .catch((error) => {
         Raven.captureException(error);
       });
-    // axios.get(`/api/menu/${this.state.restaurantId}`)
+    // axios.get(`http://127.0.0.1:3002/api/menu/${this.state.restaurantId}`)
     //   .then((response) => {
     //     this.setState({ restaurantMenu: response.data });
     //   })
