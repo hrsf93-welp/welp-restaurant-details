@@ -2,10 +2,16 @@
 .vscode
 
 # Dependencies
-node_modules
+node_modules/
 
 # Logs
 yarn-error.log
 
 # API Keys
 config.js
+
+# Test Coverage reports
+coverage/
+
+# App.js (build instructions in README.md)
+public/app.js
