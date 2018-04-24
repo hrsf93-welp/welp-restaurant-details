@@ -5,11 +5,11 @@ import EXAMPLE_RESTAURANTS from './data/exampleRestaurants';
 
 describe('<Hours />', () => {
   test('renders Hours title', () => {
-    const wrapper = shallow(<Hours hours={EXAMPLE_RESTAURANTS.hours} />);
+    const wrapper = shallow(<Hours hours={EXAMPLE_RESTAURANTS[0].hours} />);
     expect(wrapper.find('h3').first().text()).toEqual('Hours');
   });
   test('renders a row for each day of the week', () => {
-    const wrapper = mount(<Hours hours={EXAMPLE_RESTAURANTS.hours} />);
+    const wrapper = mount(<Hours hours={EXAMPLE_RESTAURANTS[0].hours} />);
     expect(wrapper.find('tr').length).toBe(7);
   });
   // test('renders closed if closed on any day of the week');
