@@ -46,7 +46,7 @@ To run locally you'll need to import the database using these commands:
 ```sh
 mongod
 mongo
-mongoimport --db welp --collection restaurants --file ./spec/data/exampleDataRestaurantInfo.json
+mongoimport --db welp --collection restaurants --file ./database/data.json
 
 ```
 

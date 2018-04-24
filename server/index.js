@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
-const Restaurants = require('./Restaurants');
+const Restaurants = require('../database/Restaurants');
+const Menus = require('../database/Menus');
 
 const app = express();
 
