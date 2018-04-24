@@ -1,3 +1,4 @@
+# System
 .DS_Store
 .vscode
 
@@ -7,11 +8,11 @@ node_modules/
 # Logs
 yarn-error.log
 
-# API Keys
-config.js
-
 # Test Coverage reports
 coverage/
 
-# App.js (build instructions in README.md)
+# App.js (build using Webpack and instructions in README.md)
 public/app.js
+
+# API Keys
+config.js
