@@ -1,6 +1,11 @@
-node_modules
-.vscode
 .DS_Store
+.vscode
+
+# Dependencies
+node_modules
+
+# Logs
 yarn-error.log
+
+# API Keys
 config.js
-public/app.js

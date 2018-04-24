@@ -7,7 +7,7 @@ import Summary from './Summary';
 import { Hours, HoursToday } from './Hours';
 import MenuPreview from './MenuPreview';
 import Details from './Details';
-import EXAMPLE_MENU_ITEMS from '../spec/data/exampleMenuItems';
+import EXAMPLE_MENU_ITEMS from '../../spec/data/exampleMenuItems';
 
 Raven
   .config('https://7f6edf48db67490fa3b5f0e72e26c6e9@sentry.io/1191135')

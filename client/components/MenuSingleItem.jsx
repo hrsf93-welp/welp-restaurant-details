@@ -1,5 +1,5 @@
 import React from 'react';
-import EXAMPLE_MENU_ITEMS from '../spec/data/exampleMenuItems';
+import EXAMPLE_MENU_ITEMS from '../../spec/data/exampleMenuItems';
 
 const MenuSingleItem = props => {
   return (

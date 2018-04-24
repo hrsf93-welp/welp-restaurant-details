@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import EXAMPLE_MENU_ITEMS from '../spec/data/exampleMenuItems';
+import EXAMPLE_MENU_ITEMS from '../../spec/data/exampleMenuItems';
 
 class MenuList extends React.Component {
 
