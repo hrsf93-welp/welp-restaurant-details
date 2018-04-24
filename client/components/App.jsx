@@ -7,7 +7,6 @@ import Summary from './Summary';
 import { Hours, HoursToday } from './Hours';
 import MenuPreview from './MenuPreview';
 import Details from './Details';
-import EXAMPLE_MENU_ITEMS from '../../spec/data/exampleMenuItems';
 
 Raven
   .config('https://7f6edf48db67490fa3b5f0e72e26c6e9@sentry.io/1191135')
@@ -20,7 +19,7 @@ class App extends React.Component {
       restaurantId: queryString.parse(window.location.search).id,
       restaurantInfo: '',
       restaurantHoursToday: '',
-      restaurantMenu: EXAMPLE_MENU_ITEMS,
+      restaurantMenu: '',
     };
   }
 
@@ -33,13 +32,13 @@ class App extends React.Component {
       .catch((error) => {
         Raven.captureException(error);
       });
-    // axios.get(`http://127.0.0.1:3002/api/menu/${this.state.restaurantId}`)
-    //   .then((response) => {
-    //     this.setState({ restaurantMenu: response.data });
-    //   })
-    //   .catch((error) => {
-    //     Raven.captureException(error);
-    //   });
+    axios.get(`http://127.0.0.1:3002/api/menu/${this.state.restaurantId}`)
+      .then((response) => {
+        this.setState({ restaurantMenu: response.data });
+      })
+      .catch((error) => {
+        Raven.captureException(error);
+      });
   }
 
   render() {
@@ -53,7 +52,7 @@ class App extends React.Component {
     const hours = this.state.restaurantInfo.hours &&
       <Hours hours={this.state.restaurantInfo.hours} />;
 
-    const menu = this.state.restaurantMenu &&
+    const menu = (this.state.restaurantMenu.length !== 0) &&
       <MenuPreview menu={this.state.restaurantMenu} />;
 
     const details = this.state.restaurantInfo.attributes &&

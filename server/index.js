@@ -23,7 +23,7 @@ app.get('/api/details/:id', (req, res) => {
 });
 
 app.get('/api/menu/:id', (req, res) => {
-  Menus.findOne({ id: req.params.id }, (err, result) => {
+  Menus.find({ id: req.params.id }, (err, result) => {
     res.send(result);
   });
 });

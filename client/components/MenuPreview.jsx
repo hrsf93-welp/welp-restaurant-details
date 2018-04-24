@@ -43,12 +43,12 @@ class MenuPreview extends React.Component {
           ))}
         <Modal show={this.state.menuItemModalOpen}
           onClose={() => this.handleItemClick(0)}>
-          <MenuSingleItem index={this.state.menuItemIndex} />
+          <MenuSingleItem menuItem={this.props.menu[this.state.menuItemIndex]} index={this.state.menuItemIndex} />
         </Modal>
         <dl className="fullMenu" onClick={this.handleMenuClick}>View the full menu</dl>
         <Modal show={this.state.menuFullModalOpen}
           onClose={() => this.handleMenuClick()}>
-          <MenuList />
+          <MenuList menu={this.props.menu} />
         </Modal>
       </div>
     )
