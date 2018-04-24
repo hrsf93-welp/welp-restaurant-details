@@ -3,9 +3,9 @@
 A service provided to a parent Yelp restaurant page.
 
 Contains 4 major sub-components: 
-1. Summary component
+1. Summary component that displays hours today, price and a menu link
 2. Hours component that renders based off of the time the site is viewed
-3. Menu component that is clickable with photos and reviews
+3. Menu component that is clickable with item photos and descriptions
 4. Details component that displays more information about the restaurant
 
 ## Related Projects
@@ -45,7 +45,6 @@ To run locally you'll need to import the database using these commands:
 
 ```sh
 mongod
-mongo
 mongoimport --db welp --collection restaurants --file ./database/restaurants-data.json
 mongoimport --db welp --collection menus --file ./database/menus-data.json
 
