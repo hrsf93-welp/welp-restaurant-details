@@ -17,10 +17,10 @@ Contains 4 major sub-components:
 
 ## Table of Contents
 
-1. [Requirements](#Requirements)
-2. [Installing Dependencies](#Installing-Dependencies)
-3. [Development](#Development)
-4. [Usage](#Usage)
+1. [Requirements](#requirements)
+2. [Installing Dependencies](#installing-dependencies)
+3. [Development](#development)
+4. [Usage](#usage)
 
 ## Requirements
 
@@ -46,7 +46,8 @@ To run locally you'll need to import the database using these commands:
 ```sh
 mongod
 mongo
-mongoimport --db welp --collection restaurants --file ./database/data.json
+mongoimport --db welp --collection restaurants --file ./database/restaurants-data.json
+mongoimport --db welp --collection menus --file ./database/menus-data.json
 
 ```
 
@@ -56,4 +57,4 @@ From within the root directory:
 ```sh
 npm start
 ```
-In a browser navigate to localhost:3002/?id=40
+In a browser navigate to [localhost:3002/?id=40](localhost:3002/?id=40)
