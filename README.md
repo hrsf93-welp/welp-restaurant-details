@@ -57,4 +57,4 @@ From within the root directory:
 ```sh
 npm start
 ```
-In a browser navigate to [localhost:3002/?id=40](localhost:3002/?id=40)
+In a browser navigate to [http://localhost:3002/?id=40](http://localhost:3002/?id=40)
