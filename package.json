@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "build": "webpack",
-    "dev:react": "webpack -d --watch",
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js",
     "test": "jest"
   },
   "repository": {
