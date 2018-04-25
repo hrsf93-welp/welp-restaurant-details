@@ -53,7 +53,7 @@ class App extends React.Component {
       <Hours hours={this.state.restaurantInfo.hours} />;
 
     const menu = (this.state.restaurantMenu.length !== 0) &&
-      <MenuPreview menu={this.state.restaurantMenu} />;
+      <MenuPreview restaurantId={this.state.restaurantId} restaurantMenu={this.state.restaurantMenu} />;
 
     const details = this.state.restaurantInfo.attributes &&
       <Details attributes={this.state.restaurantInfo.attributes} />;

@@ -29,12 +29,12 @@ const Hours = props => (
           }
           return (
             <tr key={dayOfWeek}>
-              <td className="dayOfWeek">{dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1, 3)}</td>
-              <td className="hoursOpen">{hoursOpen}</td>
+              <td className="day-of-week">{dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1, 3)}</td>
+              <td className="hours-open">{hoursOpen}</td>
               { dayOfWeek === HoursToday.dayOfWeek && (
                 HoursToday.isOpen ?
-                  <td className="isOpenTrue">Open now</td> :
-                  <td className="isOpenFalse">Closed now</td>
+                  <td className="is-open-true">Open now</td> :
+                  <td className="is-open-false">Closed now</td>
               )}
             </tr>
           );

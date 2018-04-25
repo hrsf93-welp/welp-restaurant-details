@@ -31,30 +31,25 @@ class MenuPreview extends React.Component {
 
   render() {
     return (
-      <div className="menu">
+      <div className="menu-preview">
         <h3>Menu</h3>
-        {this.props.menu.slice(0, 3).map((item, index) => (
-          <div key={item.name}>
-            <dl onClick={() => this.handleItemClick(index)}>
-              <img src={item.photoUrls[0]} height="50px" width="50px"></img>
-              {item.name}
-            </dl>
+        {this.props.restaurantMenu.slice(0, 3).map((item, index) => (
+          <div key={item.name} onClick={() => this.handleItemClick(index)}>
+            <div >{item.name}</div>
+            <img className="img-small" src={item.photoUrls[0]} alt="" />
           </div>
           ))}
-        <Modal show={this.state.menuItemModalOpen}
-          onClose={() => this.handleItemClick(0)}>
-          <MenuSingleItem menuItem={this.props.menu[this.state.menuItemIndex]} index={this.state.menuItemIndex} />
+        <Modal show={this.state.menuItemModalOpen} onClose={() => this.handleItemClick(0)}>
+          <MenuSingleItem menuItem={this.props.restaurantMenu[this.state.menuItemIndex]} index={this.state.menuItemIndex} />
         </Modal>
-        <dl className="fullMenu" onClick={this.handleMenuClick}>View the full menu</dl>
-        <Modal show={this.state.menuFullModalOpen}
-          onClose={() => this.handleMenuClick()}>
-          <MenuList menu={this.props.menu} />
+        <dl className="full-menu" onClick={this.handleMenuClick}>View the full menu</dl>
+        <Modal show={this.state.menuFullModalOpen} onClose={() => this.handleMenuClick()}>
+          <MenuList restaurantId={this.props.restaurantId} />
         </Modal>
       </div>
-    )
+    );
   }
-
-} 
+}
 
 MenuPreview.propTypes = {
   menu: PropTypes.arrayOf(PropTypes.object),

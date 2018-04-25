@@ -1,19 +1,35 @@
-/* Source: https://www.yelp.com/styleguide */
+// Source: https://www.yelp.com/styleguide
 
 // Text colors
-$normal-text: #333333;
+$normal-text: #333;
 $link-color: #0073bb;
 
-.menu {
-  dl {
-    font-weight: 700;
-    color: $link-color;
-    &:hover { text-decoration: underline; }
-  }
+.img-small {
+  border-radius: 4px;
+  height: 50px;
+  margin: 5px;
+  width: 50px;
+}
 
-  .fullMenu {
+.img-large {
+  height: 300px;
+  margin: 5px;
+  width: 450px;
+}
+
+.menu-preview {
+  .full-menu {
+    color: $link-color;
     font-size: 12px;
     font-weight: 500;
+    &:hover { text-decoration: underline; }
   }
-  
+}
+
+.menu-single-item {
+  color: $normal-text;
+}
+
+.menu-list {
+  color: $normal-text;
 }

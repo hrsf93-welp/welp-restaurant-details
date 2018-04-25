@@ -16,3 +16,6 @@ public/app.js
 
 # API Keys
 config.js
+
+# Images
+client/images/

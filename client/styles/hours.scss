@@ -1,31 +1,32 @@
-/* Source: https://www.yelp.com/styleguide */
+// Source: https://www.yelp.com/styleguide
 
 // Text colors
-$normal-text: #333333;
+$normal-text: #333;
 $error-text: #d32323;
 $green: #41a700;
 
 .hours {
-    td {
-      padding: 2px 4px;
-    }
-    .dayOfWeek {
-      font-weight: 700;
-    }
+  td {
+    padding: 2px 4px;
+  }
 
-    .hoursOpen {
-      font-weight: 500;
-    }
+  .day-of-week {
+    font-weight: 700;
+  }
+
+  .hours-open {
+    font-weight: 500;
+  }
 }
 
-.isOpenTrue {
-  font-size: 12px;
-  font-weight: 700;
+.is-open-true {
   color: $green;
-}
-
-.isOpenFalse {
   font-size: 12px;
   font-weight: 700;
+}
+
+.is-open-false {
   color: $error-text;
+  font-size: 12px;
+  font-weight: 700;
 }
