@@ -70,5 +70,6 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./spec/setupTests.js"
-  }
+  },
+  "sasslintConfig": ".sass-lint.yml"
 }
