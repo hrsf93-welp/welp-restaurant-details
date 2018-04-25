@@ -32,12 +32,6 @@ const Details = (props) => {
   const GoodForKids = ('goodForKids' in props.attributes) &&
     <dl><dt>Good For Kids </dt><dd>{ props.attributes.goodForKids ? 'Yes' : 'No' }</dd></dl>;
 
-  const NoiseLevel = ('noiseLevel' in props.attributes) &&
-    <dl>
-      <dt>Noise Level </dt>
-      <dd>{ props.attributes.noiseLevel.charAt(0).toUpperCase() + props.attributes.noiseLevel.slice(1)}</dd>
-    </dl>;
-
   const WiFi = ('wiFi' in props.attributes) &&
     <dl>
       <dt>WiFi </dt>
@@ -48,6 +42,16 @@ const Details = (props) => {
     <dl>
       <dt>Attire </dt>
       <dd>{ props.attributes.restaurantsAttire.charAt(0).toUpperCase() + props.attributes.restaurantsAttire.slice(1)}</dd>
+    </dl>;
+
+  const NoiseLevel = ('noiseLevel' in props.attributes) &&
+    <dl>
+      <dt>Noise Level </dt>
+      <dd>
+        { props.attributes.noiseLevel.split('_')
+        .map(word => ((word === 'and') ? '&' : word.charAt(0).toUpperCase() + word.slice(1)))
+        .join(' ') }
+      </dd>
     </dl>;
 
   const Alcohol = ('alcohol' in props.attributes) &&
