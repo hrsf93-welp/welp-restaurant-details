@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const MenuSingleItem = props => (
   <div className="menu-single-item">
     <h3>{props.menuItem.name}</h3>
-    <h4>{props.menuItem.description}</h4>
+    <p>{props.menuItem.description}</p>
     <img className="img-large" src={props.menuItem.photoUrls[0]} alt="" />
   </div>
 );

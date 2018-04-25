@@ -35,7 +35,7 @@ class MenuPreview extends React.Component {
         <h3>Menu</h3>
         {this.props.restaurantMenu.slice(0, 3).map((item, index) => (
           <div key={item.name} onClick={() => this.handleItemClick(index)}>
-            <div >{item.name}</div>
+            <h4>{item.name}</h4>
             <img className="img-small" src={item.photoUrls[0]} alt="" />
           </div>
           ))}

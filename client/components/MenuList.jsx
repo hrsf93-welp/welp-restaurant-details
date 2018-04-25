@@ -28,7 +28,7 @@ class MenuList extends React.Component {
         {this.state.restaurantMenu.map(item => (
           <div key={item.name}>
             <h4>{item.name}</h4>
-            {item.photoUrls.map(url => <img className="img-small" key={url.slice(-6, -4)} src={url} alt="" />)}
+            {item.photoUrls.map(url => <img className="img-medium" key={url.slice(-6, -4)} src={url} alt="" />)}
           </div>
         ))}
       </div>
