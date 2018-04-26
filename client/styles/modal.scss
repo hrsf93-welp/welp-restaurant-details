@@ -1,6 +1,7 @@
 // Styles from: https://daveceddia.com/open-modal-in-react/
 
 $backdrop-color: rgba(0, 0, 0, .3);
+$modal-color: #fff;
 
 // The gray background
 .backdrop {
@@ -17,6 +18,7 @@ $backdrop-color: rgba(0, 0, 0, .3);
 
 // The modal "window"
 .modal {
+  background-color: $modal-color;
   display: flex;
   justify-content: flex-start;
   max-height: 80%;

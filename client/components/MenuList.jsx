@@ -25,12 +25,18 @@ class MenuList extends React.Component {
     return (
       <div className="menu-list">
         <h3>Menu</h3>
-        {this.state.restaurantMenu.map(item => (
-          <div key={item.name}>
-            <h4>{item.name}</h4>
-            {item.photoUrls.map(url => <img className="img-medium" key={url.slice(-6, -4)} src={url} alt="" />)}
-          </div>
-        ))}
+        {this.state.restaurantMenu
+          .filter(item => item.photoUrls.length)
+          .map(item => (
+            <div className="menu-item-container" key={item.name}>
+              <img className="img-medium" src={item.photoUrls[0]} alt="" />
+              <div className="text-box-container">
+                <h4>{item.name}</h4>
+                {item.description}
+              </div>
+            </div>
+          ))
+        }
       </div>
     );
   }

@@ -4,9 +4,6 @@
 $normal-text: #333;
 $link-color: #0073bb;
 
-// Background colors
-$background-color: #fff;
-
 .menu-preview {
   h4 {
     color: $link-color;
@@ -44,7 +41,6 @@ $background-color: #fff;
   }
 
   .text-box {
-    background-color: $background-color;
     height: 100%;
     width: 33%;
 
@@ -63,21 +59,36 @@ $background-color: #fff;
 }
 
 .menu-list {
-  .img-medium {
-    border-radius: 4px;
-    height: 100px;
-    margin: 5px;
-    width: 100px;
-  }
+  display: flex;
+  flex-direction: column;
 
   h3 {
-    color: $normal-text;
+    margin: 20px;
   }
 
-  h4 {
-    color: $normal-text;
-    font-weight: 700;
-    &:hover { text-decoration: none; }
-    &:active { text-decoration: none; }
+  .menu-item-container {
+    display: flex;
+    height: 85px;
+
+    .img-medium {
+      border-radius: 4px;
+      height: 75px;
+      margin: 5px 20px;
+      width: 75px;
+    }
+
+    .text-box-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-right: 20px;
+
+      h4 {
+        color: $normal-text;
+        font-weight: 700;
+        &:hover { text-decoration: none; }
+        &:active { text-decoration: none; }
+      }
+    }
   }
 }
