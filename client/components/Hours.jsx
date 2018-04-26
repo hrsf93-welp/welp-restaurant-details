@@ -79,13 +79,15 @@ Hours.propTypes = {
     saturday: PropTypes.string,
     sunday: PropTypes.string,
   }),
-  latitude: PropTypes.number.isRequired,
-  longitude: PropTypes.number.isRequired,
+  latitude: PropTypes.number,
+  longitude: PropTypes.number,
   updateHours: PropTypes.func.isRequired,
 };
 
 Hours.defaultProps = {
   hours: undefined,
+  latitude: 0,
+  longitude: 0,
 };
 
 export { Hours, HoursToday };
