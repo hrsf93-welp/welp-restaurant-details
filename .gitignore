@@ -12,7 +12,7 @@ yarn-error.log
 coverage/
 
 # App.js (build using Webpack and instructions in README.md)
-public/app.js
+# public/app.js
 
 # API Keys
 config.js
