@@ -21,13 +21,13 @@ class App extends React.Component {
       restaurantHoursToday: '',
       restaurantMenu: '',
     };
+    this.updateHours = this.updateHours.bind(this);
   }
 
   componentDidMount() {
     axios.get(`http://127.0.0.1:3002/api/details/${this.state.restaurantId}`)
       .then((response) => {
         this.setState({ restaurantInfo: response.data });
-        this.setState({ restaurantHoursToday: HoursToday });
       })
       .catch((error) => {
         Raven.captureException(error);
@@ -41,25 +41,30 @@ class App extends React.Component {
       });
   }
 
+  updateHours() {
+    this.setState({ restaurantHoursToday: HoursToday });
+  }
+
   render() {
-    const summary = this.state.restaurantInfo &&
+    const summary = this.state.restaurantInfo.hasOwnProperty('attributes') &&
       <Summary
         today={this.state.restaurantHoursToday}
         menu={this.state.restaurantInfo.menuUrl}
         price={this.state.restaurantInfo.attributes.restaurantsPriceRange2}
       />;
 
-    const hours = this.state.restaurantInfo.hours &&
-      <Hours 
+    const hours = this.state.restaurantInfo.hasOwnProperty('attributes') &&
+      <Hours
         hours={this.state.restaurantInfo.hours}
         latitude={this.state.restaurantInfo.latitude}
-        longitude={this.state.restaurantInfo.longitude} 
+        longitude={this.state.restaurantInfo.longitude}
+        updateHours={this.updateHours}
       />;
 
     const menu = (this.state.restaurantMenu.length !== 0) &&
       <MenuPreview restaurantId={this.state.restaurantId} restaurantMenu={this.state.restaurantMenu} />;
 
-    const details = this.state.restaurantInfo.attributes &&
+    const details = this.state.restaurantInfo.hasOwnProperty('attributes') &&
       <Details attributes={this.state.restaurantInfo.attributes} />;
 
     return (
