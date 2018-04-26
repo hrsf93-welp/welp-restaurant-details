@@ -5,7 +5,7 @@ import EXAMPLE_MENU_ITEMS from './data/exampleMenuItems';
 
 describe('<MenuPreview />', () => {
   test('renders Menu title', () => {
-    const wrapper = shallow(<MenuPreview menu={EXAMPLE_MENU_ITEMS} />);
+    const wrapper = shallow(<MenuPreview restaurantMenu={EXAMPLE_MENU_ITEMS} />);
     expect(wrapper.find('h3').first().text()).toEqual('Menu');
   });
 });
