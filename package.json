@@ -4,7 +4,7 @@
   "description": "A component for a functional Yelp page that displays restaurant hours, menu and more information",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "node database/seed.js & nodemon server/index.js",
     "build": "webpack",
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js",

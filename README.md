@@ -17,43 +17,52 @@ Contains 4 major sub-components:
 
 ## Table of Contents
 
-1. [Requirements](#requirements)
-2. [Installing Dependencies](#installing-dependencies)
+1. [Usage](#usage)
+2. [Requirements](#requirements)
 3. [Development](#development)
-4. [Usage](#usage)
+
+## Usage
+
+Two ways to start the application:
+1. Docker
+From within the root directory:
+```sh
+docker-compose up -d
+```
+In a browser navigate to [http://localhost:3002/?id=40](http://localhost:3002/?id=40)
+
+2. Install Dependencies and Build Locally
+From within the root directory:
+```sh
+mongod
+npm install
+npm run build
+npm start
+```
 
 ## Requirements
 
-__Note:__ Nodemon, Webpack and Mongo can be installed globally:
+__Note:__ Nodemon should be installed globally, Webpack and Mongo are also recommended:
 ```sh
 npm install -g nodemon
 npm install -g webpack
 npm install -g mongo
 ```
-## Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install
-npm run build
-```
 
 ## Development
 
-To run locally you'll need to import the database using these commands:
-
+These scripts are included in the package.json config:
+1. Run webpack and watch for updated files
 ```sh
-mongod
-mongoimport --db welp --collection restaurants --file ./database/restaurants-data.json
-mongoimport --db welp --collection menus --file ./database/menus-data.json
-
+npm run react-dev
+```
+2. Run nodemon and watch for updated files
+```sh
+npm run server-dev
+```
+3. Run jest to initialize tests
+```sh
+npm test
 ```
 
-## Usage
 
-From within the root directory:
-```sh
-npm start
-```
-In a browser navigate to [http://localhost:3002/?id=40](http://localhost:3002/?id=40)
