@@ -25,14 +25,14 @@ Contains 4 major sub-components:
 
 Two ways to start the application:
 1. Docker
-From within the root directory:
+from within the root directory:
 ```sh
 docker-compose up -d
 ```
 In a browser navigate to [http://localhost:3002/?id=40](http://localhost:3002/?id=40)
 
-2. Install Dependencies and Build Locally
-From within the root directory:
+2. Install Dependencies and build locally
+from within the root directory:
 ```sh
 mongod
 npm install
@@ -42,7 +42,7 @@ npm start
 
 ## Requirements
 
-__Note:__ Nodemon should be installed globally, Webpack and Mongo are also recommended:
+__Note:__ Nodemon should be installed globally. Webpack and Mongo are also recommended:
 ```sh
 npm install -g nodemon
 npm install -g webpack
