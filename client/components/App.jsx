@@ -53,7 +53,7 @@ class App extends React.Component {
         price={this.state.restaurantInfo.attributes.restaurantsPriceRange2}
       />;
 
-    const hours = this.state.restaurantInfo.hasOwnProperty('attributes') &&
+    const hours = this.state.restaurantInfo.hasOwnProperty('hours') &&
       <Hours
         hours={this.state.restaurantInfo.hours}
         latitude={this.state.restaurantInfo.latitude}
