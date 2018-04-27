@@ -7,6 +7,7 @@ import Summary from './Summary';
 import { Hours, HoursToday } from './Hours';
 import MenuPreview from './MenuPreview';
 import Details from './Details';
+import AWS_PUBLIC_IP from '../../server/aws-ip';
 
 Raven
   .config('https://7f6edf48db67490fa3b5f0e72e26c6e9@sentry.io/1191135')
@@ -25,14 +26,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://127.0.0.1:3002/api/details/${this.state.restaurantId}`)
+    axios.get(`http://${AWS_PUBLIC_IP}:3002/api/details/${this.state.restaurantId}`)
       .then((response) => {
         this.setState({ restaurantInfo: response.data });
       })
       .catch((error) => {
         Raven.captureException(error);
       });
-    axios.get(`http://127.0.0.1:3002/api/menu/${this.state.restaurantId}`)
+    axios.get(`http://${AWS_PUBLIC_IP}:3002/api/menu/${this.state.restaurantId}`)
       .then((response) => {
         this.setState({ restaurantMenu: response.data });
       })

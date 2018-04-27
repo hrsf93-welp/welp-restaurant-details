@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Raven from 'raven-js';
 import axios from 'axios';
+import AWS_PUBLIC_IP from '../../server/aws-ip';
 
 class MenuList extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class MenuList extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get(`http://127.0.0.1:3002/api/menu/${this.props.restaurantId}`)
+    axios.get(`http://${AWS_PUBLIC_IP}:3002/api/menu/${this.props.restaurantId}`)
       .then((response) => {
         this.setState({ restaurantMenu: response.data });
       })
