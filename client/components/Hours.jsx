@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import Raven from 'raven-js';
 import axios from 'axios';
 import moment from 'moment-timezone';
-
-const GOOGLE_MAPS_API_KEY = 'AIzaSyDxmzBvLnfAlTq29wMGKivzjyo6LOUJwyg';
+import GOOGLE_MAPS_API_KEY from '../../server/config';
 
 const HoursToday = {
   dayOfWeek: '',
