@@ -4,7 +4,7 @@ $backdrop-color: rgba(0, 0, 0, .3);
 $modal-color: #fff;
 
 // The gray background
-.backdrop {
+.backdrop-menu {
   background-color: $backdrop-color;
   bottom: 0;
   display: flex;
@@ -17,7 +17,7 @@ $modal-color: #fff;
 }
 
 // The modal "window"
-.modal {
+.modal-menu {
   background-color: $modal-color;
   display: flex;
   justify-content: flex-start;

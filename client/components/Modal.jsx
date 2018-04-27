@@ -8,8 +8,8 @@ const Modal = (props) => {
     return null;
   }
   return (
-    <div className="backdrop" onClick={props.onClose}>
-      <div className="modal" onClick={event => event.stopPropagation()}>
+    <div className="backdrop-menu" onClick={props.onClose}>
+      <div className="modal-menu" onClick={event => event.stopPropagation()}>
         {props.children}
       </div>
     </div>
