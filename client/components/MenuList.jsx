@@ -12,7 +12,7 @@ class MenuList extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get(`http://${AWS_PUBLIC_IP}:3002/api/menu/${this.props.restaurantId}`)
+    axios.get(`http://${AWS_PUBLIC_IP}:/api/menu/${this.props.restaurantId}`)
       .then((response) => {
         this.setState({ restaurantMenu: response.data });
       })

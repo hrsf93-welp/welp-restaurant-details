@@ -26,14 +26,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://${AWS_PUBLIC_IP}:3002/api/details/${this.state.restaurantId}`)
+    axios.get(`http://${AWS_PUBLIC_IP}/api/details/${this.state.restaurantId}`)
       .then((response) => {
         this.setState({ restaurantInfo: response.data });
       })
       .catch((error) => {
         Raven.captureException(error);
       });
-    axios.get(`http://${AWS_PUBLIC_IP}:3002/api/menu/${this.state.restaurantId}`)
+    axios.get(`http://${AWS_PUBLIC_IP}/api/menu/${this.state.restaurantId}`)
       .then((response) => {
         this.setState({ restaurantMenu: response.data });
       })
