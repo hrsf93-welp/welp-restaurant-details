@@ -29,7 +29,7 @@ class MenuList extends React.Component {
         {this.state.restaurantMenu
           .filter(item => item.photoUrls.length)
           .map(item => (
-            <div className="menu-item-container" key={item.name}>
+            <div className="menu-item-container" key={`${item.name} -list`}>
               <img className="img-medium" src={item.photoUrls[0]} alt="" />
               <div className="text-box-container">
                 <h4>{item.name}</h4>
